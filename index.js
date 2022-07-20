@@ -8,15 +8,15 @@ listaUsRegistrados.push(usuario1, passwordLogin1);
 while (iniciarSesion != "") {
     if (iniciarSesion == "in") {
         let usuario = prompt("Ingrese su usuario:");
-        switch (listaUsRegistrados.includes("teteun")) {
-            case true:
-                let password = parseInt(prompt("Ingrese su contraseña: "));
-                alert(`Login exitoso, Bienvenida teteun`);
-                let productos = prompt("Ingrese (p) si desea comprar plantas, (m) si desea comprar macetas o (i) si desea comprar insumos");
-                continue
-            default:
-                alert(`El usuario es incorrecto, pruebe nuevamente`);
-                let usuario = prompt("Ingrese su usuario:");
+        if (listaUsRegistrados.includes( `${usuario}`)){
+            let password = parseInt(prompt("Ingrese su contraseña: "));
+            if (listaUsRegistrados.includes(`${password}`)){
+                alert(`Login exitoso, Bienvenida/o, siga con su compra!!!`);
+            }
+        }
+        else{
+            alert(`El usuario es incorrecto, pruebe nuevamente`);
+            continue
         }
     }
 
@@ -40,7 +40,7 @@ while (iniciarSesion != "") {
     /* Error, no me pushea mis nuevos registros en la lista, solo aparecen los que pushee al principio */
     /* alert(` ${listaUsRegistrados}`) */
     break
-}
+    }
     else {
         alert(`La entrada ingresada no es valida`)
         let iniciarSesion = prompt("Para realizar su compra debe iniciar sesion, si ya tiene usuario ingrese (in), sino registrese con (re)");
